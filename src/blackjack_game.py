@@ -80,7 +80,6 @@ class BlackjackGame:
             else:
                 print(f"Player loses -${self.bet_amount}")
         print(f"\n{'*' * 100}")
-
     def player_blackjack(self):
         print(f"Dealer {self.dealer_hand}")
         print(f"Player {', '.join(str(hand) for hand in self.player_hands)}")
@@ -90,7 +89,6 @@ class BlackjackGame:
                 print(f"Player Wins +${self.bet_amount * 1.5}")
                 self.player.win_bet(self.bet_amount, 2.5)  # 1.5x winnings for Blackjack
         print(f"\n{'*' * 100}")
-
     def player_turn(self):
         for i, hand in enumerate(self.player_hands):
             if not self.check_blackjack(hand):  # Skip player turn if they have Blackjack

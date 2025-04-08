@@ -21,7 +21,7 @@ cd blackjack-python
 Or download the ZIP file from GitHub and extract it manually.
 
 
-##2. Run the Game
+## 2. Run the Game
 No additional dependencies are required!
 Navigate into the src directory and run the game:
 
@@ -30,3 +30,5 @@ cd src
 python main.py
 ```
 That's it! The game will start in your terminal.
+
+![Blackjack Game Demo](readme_images/Blackjack_intro.PNG)

@@ -2,7 +2,7 @@ from blackjack_game import BlackjackGame
 
 def display_startup_message():
     print("\n" + "*" * 50)
-    print("♥♦♣♠ WELCOME TO BLACKJACK! ♠♦♣♥")
+    print("♦ ♠ ❤️♣ WELCOME TO BLACKJACK!♣ ❤️♠ ♦ ")
     print("Basic Rules:")
     print("- Try to get as close to 21 without going over")
     print("- Dealer must hit on soft 17")

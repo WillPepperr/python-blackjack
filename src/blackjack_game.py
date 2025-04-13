@@ -16,7 +16,7 @@ class BlackjackGame:
         self.shoe = Shoe(num_decks, game_burn_percentage)
         self.player = Player(initial_balance=initial_balance)
         self.player_hands = []
-        self.dealer_hand = None
+        self.dealer_hand = Hand() 
         self.split_hand_index = 0  #For properly assining hand numbers for split hands
         self.bet_amount = 0
         self.game_loop()

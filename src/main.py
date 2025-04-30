@@ -1,8 +1,13 @@
-from blackjack_game import BlackjackGame
+from blackjack_game import * 
+from card import *  
+from config import * 
 
 def display_startup_message():
     print("\n" + "*" * 50)
-    print("♦ ♠ ❤️♣ WELCOME TO BLACKJACK!♣ ❤️♠ ♦ ")
+    if is_nerd_font():
+        print("♦ ♠ ❤️♣ WELCOME TO BLACKJACK!♣ ❤️♠ ♦ ")
+    else:
+        print("♦ ♠ ♥ ♣ WELCOME TO BLACKJACK!♣ ♥ ♠ ♦") 
     print("Basic Rules:")
     print("- Try to get as close to 21 without going over")
     print("- Dealer must hit on soft 17")
@@ -35,5 +40,7 @@ def display_startup_message():
 
 
 if __name__ == "__main__":
+    nerd_font_check() 
+    Card.suits = get_suits() 
     display_startup_message()
     game = BlackjackGame(num_decks=8, game_burn_percentage=.80, initial_balance=1000)

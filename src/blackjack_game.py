@@ -90,9 +90,9 @@ class BlackjackGame:
                 self.player.win_bet(self.bet_amount, 2.5)  # 1.5x winnings for Blackjack
         print(f"\n{'*' * 100}")
     def player_turn(self):
-        for i, hand in enumerate(self.player_hands):
+        for hand in self.player_hands:
             if not self.check_blackjack(hand):  # Skip player turn if they have Blackjack
-                print(f"\nRunning Count: {self.shoe.update_running_count()} \t True Count:{self.shoe.update_true_count()}\n")
+                print(f"\nRunning Count: {self.shoe.update_running_count()} \t True Count:{self.shoe.update_true_count()}")
                 while True:
                     hand.update_split_ability()
                     available_actions = ["hit [h]", "stand [s]"]
@@ -102,7 +102,7 @@ class BlackjackGame:
                     if hand.can_split:  
                         available_actions.append("split [p]")
                 
-                    action = safe_input(f"{hand}\n{'  '.join(available_actions)}: ").strip().lower() 
+                    action = safe_input(f"{hand}\n{'  '.join(available_actions)}: \n").strip().lower() 
                     if action == 'hit' or action == 'h':
                         hand.add_card(self.shoe.deal())
                         hand.get_hand_value()
@@ -210,6 +210,8 @@ class BlackjackGame:
                     self.player_turn()
                     if any(hand.get_hand_value() <= 21 for hand in self.player_hands):  # Dealer only has a turn if player has not busted all hands
                         self.dealer_turn()
+                    else:
+                        print(f"Dealer Had: {self.dealer_hand.cards[0]} {self.dealer_hand.cards[1]}") 
                     results = self.determine_winner()
                     for result in results:
                         print(result)

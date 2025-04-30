@@ -92,7 +92,7 @@ class BlackjackGame:
     def player_turn(self):
         for hand in self.player_hands:
             if not self.check_blackjack(hand):  # Skip player turn if they have Blackjack
-                print(f"\nRunning Count: {self.shoe.update_running_count()} \t True Count:{self.shoe.update_true_count()}")
+                print(f"\nRunning Count: {self.shoe.update_running_count()} \t True Count:{self.shoe.update_true_count()}\n")
                 while True:
                     hand.update_split_ability()
                     available_actions = ["hit [h]", "stand [s]"]
@@ -102,7 +102,7 @@ class BlackjackGame:
                     if hand.can_split:  
                         available_actions.append("split [p]")
                 
-                    action = safe_input(f"{hand}\n{'  '.join(available_actions)}: \n").strip().lower() 
+                    action = safe_input(f"{hand}\n{'  '.join(available_actions)}: ").strip().lower() 
                     if action == 'hit' or action == 'h':
                         hand.add_card(self.shoe.deal())
                         hand.get_hand_value()

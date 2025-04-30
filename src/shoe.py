@@ -1,5 +1,5 @@
 import random
-from card import Card
+from card import * 
 
 class Shoe:
     def __init__(self, num_decks, burn_percentage):

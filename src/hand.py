@@ -1,5 +1,5 @@
-import card
-
+from card import * 
+    
 class Hand:
     def __init__(self, is_player_hand=True, hand_number=1, player_bet=0, player_balance=0):
         self.cards = []

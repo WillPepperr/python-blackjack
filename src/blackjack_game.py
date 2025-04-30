@@ -1,7 +1,7 @@
 import sys
-from hand import Hand
-from shoe import Shoe
-from player import Player
+from hand import * 
+from shoe import *  
+from player import * 
 
 
 def safe_input(prompt):

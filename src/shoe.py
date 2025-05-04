@@ -1,5 +1,5 @@
 import random
-from card import * 
+from card import Card
 
 class Shoe:
     def __init__(self, num_decks, burn_percentage):
@@ -47,8 +47,8 @@ class Shoe:
         return running
 
     def update_true_count(self):
-        rounded_cards = max(round((len(self.shoe_cards) / 52)), 1)
-        true_count= round(self.update_running_count() / rounded_cards)
+        num_decks_rounded = max(round((len(self.shoe_cards) / 52)), 1)
+        true_count= round(self.update_running_count() / num_decks_rounded)
         return true_count
 
 

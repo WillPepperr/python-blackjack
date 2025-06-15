@@ -101,7 +101,7 @@ class BlackjackGame:
                         available_actions.append("double [d]")
                     if hand.can_split:  
                         available_actions.append("split [p]")
-                
+
                     action = safe_input(f"{hand}\n{'  '.join(available_actions)}: ").strip().lower() 
                     if action == 'hit' or action == 'h':
                         hand.add_card(self.shoe.deal())

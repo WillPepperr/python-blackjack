@@ -1,9 +1,9 @@
 import random
-from card import Card
+from card import *
 
 class Shoe:
     def __init__(self, num_decks, burn_percentage):
-        self.all_cards = num_decks * 52
+        self.full_shoe_size = num_decks * 52
         self.decks = num_decks
         self.burned_cards = []
         self.shoe_cards = []
@@ -29,13 +29,13 @@ class Shoe:
             random.shuffle(self.burned_cards)
             self.shoe_cards.extend(self.burned_cards)
             self.burned_cards.clear()
-            
+
             card = self.shoe_cards.pop()
             self.burned_cards.append(card)
         return card
 
     def percentage_burned(self):
-        return len(self.burned_cards) / self.all_cards
+        return len(self.burned_cards) / self.full_shoe_size
 
     def update_running_count(self):
         running = self.running_count

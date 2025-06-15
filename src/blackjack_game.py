@@ -29,7 +29,7 @@ class BlackjackGame:
             hand.add_card(self.shoe.deal())
         self.dealer_hand.add_card(self.shoe.deal())
         self.dealer_hand.add_card(self.shoe.deal())
-        
+
         print(f"\nDealer's card: {self.dealer_hand.cards[0]} Value: {self.dealer_hand.cards[0].value}")
         print(f"Dealer's card: [Hidden]")
         insurance_placed = False
@@ -206,7 +206,7 @@ class BlackjackGame:
                 self.player.place_bet(self.bet_amount)
                 self.deal_initial_cards()
                 if not self.check_blackjack(self.dealer_hand) and all(not self.check_blackjack(hand) for hand in self.player_hands):
-                    self.shoe.remove_hidden_count()  # for card counting
+                    self.shoe.remove_hidden_count()
                     self.player_turn()
                     if any(hand.get_hand_value() <= 21 for hand in self.player_hands):  # Dealer only has a turn if player has not busted all hands
                         self.dealer_turn()

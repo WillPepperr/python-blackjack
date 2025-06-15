@@ -1,5 +1,5 @@
 from card import * 
-    
+
 class Hand:
     def __init__(self, is_player_hand=True, hand_number=1, player_bet=0, player_balance=0):
         self.cards = []
@@ -8,7 +8,7 @@ class Hand:
         self.hand_number = hand_number
         self.num_aces = sum(1 for card in self.cards if card.face == 'A')
         self.has_doubled = False
-        self.has_split = False # for flagging hand after splitting to deny an unwarrented Blackjack 
+        self.has_split = False # for flagging hand after splitting to deny an unwarrented Blackjack
         self.player_bet = player_bet
         self.player_balance = player_balance
 
